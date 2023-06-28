@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ************ TESTS ************** -->
+  <!-- добавим стили mocha для отображения результатов -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css"> -->
+  <!-- добавляем сам фреймворк mocha -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script> -->
+  <!-- <script>
+    // включаем режим тестирования в стиле BDD
+    mocha.setup('bdd');
+    </script> -->
+  <!-- добавим chai -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // chai предоставляет большое количество функций. Объявим assert глобально
+    let assert = chai.assert;
+    </script> -->
+    <!-- ************ TESTS ************** -->
+    
+    <title>Document</title>
+    <style>
+      h2 {
+        color:red;
+      }
+      .hidden {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      padding: 5px;
+      background: #55555555;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a href="https://disk.yandex.ru/d/KwdXQropyuL3Iw" target="_blanc">Учебные материалы</a>
+  <a href="https://learn.javascript.ru/object-basics" target="_blanc">Читать</a>
+  <h2>Установить VSCode</h2>
+  Скачать и установить Git
+  <br>
+  Перезагрузить VSCode
+  <br>
+  Перейти в книгу, пункт 1.6 https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup
+  <br>
+  Ввести 2 команды в VSCode (Установка имени и почты git)
+  <br>
+  git config --global user.name "John Doe"
+  <br>
+  git config --global user.email johndoe@example.com
+  <br>
+  Нажать на шестерёнку, включить синхронизацию через GitHub
+  <div id="task1">
+    <b></b>
+    <input type="text">
+    <button>Проверить имя</button>
+    <button class="hidden">Проверить пароль</button>
+    <p></p>
+  </div>
+
+  <!-- <button class="showPurchase">Показать покупки</button>
+  <button class="addPurchase">Добавить в список</button>
+  <button class="setPurchased">Отметить купленным</button>
+  <ol class="purchase"></ol>
+
+  <div class="printText"></div> -->
+
+
+
+  <!-- <script>
+    describe("pow", function() {
+
+      describe("возводит x в степень 3", function() {
+
+        function makeTest(x) {
+          let expected = x * x * x;
+          it(`${x} в степени 3 будет ${expected}`, function() {
+            assert.equal(pow(x, 3), expected);
+          });
+        }
+
+        for (let x = 1; x <= 5; x++) {
+          makeTest(x);
+        }
+
+      });
+
+      it("для отрицательных n возвращает NaN", function() {
+        assert.isNaN(pow(2, -1));
+      });
+
+      it("для дробных n возвращает NaN", function() {
+        assert.isNaN(pow(2, 1.5));
+      });
+
+  });
+  </script> -->
+
+
+<!-- ************ TESTS ************** -->
+
+<!-- элемент с id="mocha" будет содержать результаты тестов -->
+  <!-- <script src="test.js"></script>
+  <div id="mocha"></div> -->
+
+  <!-- запускаем тесты! -->
+  <!-- <script>
+    mocha.run();
+  </script> -->
+<!-- ************ TESTS ************** -->
+
+<script src="dist/script.js"></script>
+
+</body>
+</html>
