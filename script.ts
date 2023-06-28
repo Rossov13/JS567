@@ -1453,31 +1453,152 @@
 // совершенное число или нет.
 
 // let perfectNumber = +prompt("write the number for the start of the range");
-function perf(n) {
-    let n1 = 0;
-    for (let i = 1; i < n; i++) {
-        if (n % i == 0) {
-            n1 = n1 + i;
-        }
-    }
-    if (n1 == n) {
-        return true;
-    } else {
-        return false;
-    }
+// function perf(n) {
+//     let n1 = 0;
+//     for (let i = 1; i < n; i++) {
+//         if (n % i == 0) {
+//             n1 = n1 + i;
+//         }
+//     }
+//     if (n1 == n) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// let diapazonFrom = +prompt("write the number for the start of the range");
+// let diapazonTo = +prompt("write the number for the end of the range");
+
+// function findPerfectNumberInRange(from, to) {
+//     let str=''
+//     for (from; from<=to; from++) {
+//         if (perf(from)) {
+//             str += from + ', '
+//         }
+//     }
+//     console.log(str)
+// }
+
+// findPerfectNumberInRange(diapazonFrom, diapazonTo)
+
+
+// Modul_1_Week_4
+// 1.Написать функцию, которая принимает 2 числа и возвра-
+// щает меньшее из них.
+// function takeNumbers () {
+//     let a = +(prompt("write the first number"));
+//     let b = +(prompt("write the second number"));
+//     if (a>b) {
+//         console.log (b)
+//     } else if (a<b) {
+//         console.log (a)
+//     }
+// }
+// takeNumbers ()
+
+// 2. Написать функцию, которая возводит переданное число
+// в указанную степень.
+// function exponentNumber () {
+//     let a = +(prompt("write the number"));
+//     let b = +(prompt("write the exponent"));
+//     console.log (a**b)
+// }
+// exponentNumber ()
+
+// 3. Написать функцию, которая принимает 2 числа и знак
+// (+ - * /), считает пример и возвращает результат.
+// function calculatorOfNumbers () {
+//     let a = +(prompt("write the first number"));
+//     let b = +(prompt("write the second number"));
+//     let c = prompt("write the sign");
+//     if (c=='+') return a+b
+//     if (c=='*') return a*b
+//     if (c=='-') return a-b
+//     if (c=='/') return a/b
+// }
+
+// console.log(calculatorOfNumbers ())
+
+// 4. Написать функцию, которая проверяет, является ли пере-
+// данное ей число простым.
+// function primeNumber () {
+//     let a = +(prompt("write the first number"));
+//     if (a/a && a/1) {
+//         console.log ('the number is prime')
+//     } else {
+//         console.log ('the number is composite')
+//     }
+// }
+// primeNumber()
+
+// 5. Написать функцию, которая принимает число и выводит
+// таблицу умножения для этого числа. Вызовите функцию
+// для всех чисел от 2 до 9
+
+// function multiplicationCalculator() {
+// let number = parseInt(prompt('write the number'));
+// for(let i = 2; i <= 9; i++) {
+
+//     let result = i * number;
+
+//     console.log(`${number} * ${i} = ${result}`);
+// }
+// }
+// multiplicationCalculator ()
+
+// 6. Написать функцию, которая реализует работу оператора %.
+// Функция принимает 2 параметра и возвращает остаток от
+// деления первого параметра на второй. В функции исполь-
+// зовать только + - * /, оператор % не использовать.
+
+// function divideOst(num1,num2) {
+//     let mnoz = 1
+//     let accum = num1-num2
+//     while (accum>num2) {
+//         accum -= num2
+//         mnoz++
+//     }
+//     return num1 - num2*mnoz
+// }
+// console.log(divideOst(11,2))
+// console.log(divideOst(11,3))
+// console.log(divideOst(11,4))
+
+// 7. Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает их сумму.
+// function sumOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,e=0) {
+//     return a+b+c+d+e    
+// }
+// console.log(sumOfTheNumbersFromOneToFive(9))
+// console.log(sumOfTheNumbersFromOneToFive(1,2))
+// console.log(sumOfTheNumbersFromOneToFive(9,5,8))
+// console.log(sumOfTheNumbersFromOneToFive(9,6,7,3))
+// console.log(sumOfTheNumbersFromOneToFive(9,3,4,2,3))
+
+
+// 8.Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает большее из них.
+function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
+    if (a>b && a>c && a>d && a>f)
+{
+    return a;
 }
-
-let diapazonFrom = +prompt("write the number for the start of the range");
-let diapazonTo = +prompt("write the number for the end of the range");
-
-function findPerfectNumberInRange(from, to) {
-    let str=''
-    for (from; from<=to; from++) {
-        if (perf(from)) {
-            str += from + ', '
-        }
-    }
-    console.log(str)
+else if (b>a && b>c && b>d && b>f)
+{
+    return b;
 }
-
-findPerfectNumberInRange(diapazonFrom, diapazonTo)
+else if (c>a && c>b && c>d && c>f)
+{
+    return c;
+}
+else if (d>a && d>c && d>b && d>f)
+{
+    return d;
+}
+else
+{
+    return f
+}
+}
+console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
