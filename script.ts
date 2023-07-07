@@ -1579,26 +1579,97 @@
 
 // 8.Написать функцию, которая принимает от 1 до 5 чисел и
 // возвращает большее из них.
-function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
-    if (a>b && a>c && a>d && a>f)
-{
-    return a;
-}
-else if (b>a && b>c && b>d && b>f)
-{
-    return b;
-}
-else if (c>a && c>b && c>d && c>f)
-{
-    return c;
-}
-else if (d>a && d>c && d>b && d>f)
-{
-    return d;
-}
-else
-{
-    return f
-}
-}
-console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
+// function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
+//     if (a>b && a>c && a>d && a>f)
+// {
+//     return a;
+// }
+// else if (b>a && b>c && b>d && b>f)
+// {
+//     return b;
+// }
+// else if (c>a && c>b && c>d && c>f)
+// {
+//     return c;
+// }
+// else if (d>a && d>c && d>b && d>f)
+// {
+//     return d;
+// }
+// else
+// {
+//     return f
+// }
+// }
+// console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
+
+// Module 2 week 2.
+// Задание 1
+// Создать массив из 10 случайных чисел и написать несколько
+// функций для работы с ним.
+// let arr = [1,2,4,6,3,4,77,334,1,2]
+// 1. Функция принимает массив и выводит его на экран.
+// const myArray = [1,2,4,6,3,4,77,334,1,2]
+// function myFunction(arr: any []) {
+//     console.log(arr);
+//   }
+//  myFunction(myArray) 
+  
+// 2. Функция принимает массив и выводит только четные элементы.
+// const myArray = [1,2,4,6,3,4,77,334,1,2]
+// const evens = myArray.filter((number) => number % 2 === 0);
+
+// console.log(evens);
+
+// 3. Функция принимает массив и возвращает сумму всех элементов массива.
+// let arr = [1,2,4,6,3,4,77,334,1,2];
+// let result = arr.reduce((sum, current) => sum + current, 0);
+
+// console.log(result)
+// 4. Функция принимает массив и возвращает его максималь-ный элемент.
+// let arr = [1,2,4,6,3,4,77,334,1,2];
+// let maxElement = Math.max.apply(null, arr);
+// console.log(maxElement)
+//     ;
+
+// 5. Функция добавления нового элемента в массив по указанному индексу.
+
+
+// 6. Функция удаления элемента из массива по указанному индексу.
+
+
+// Задание 2.
+// Создать еще один массив из 5 случайных чисел и написать
+// следующие функции.
+
+// 1. Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из двух массивов
+// без повторений.
+// let a = [1, 2, 3]; 
+// let b = [101, 2, 1, 10];
+// let c = a.concat(b)
+// let d = c.filter((item, positive) => c.indexOf(item) === positive)
+
+// console.log(d) 
+
+// 2.Функция принимает 2 массива и возвращает новый массив,
+// в котором собраны общие элементы (то есть элементы,
+// которые встречаются и в первом и во втором массивах)
+// без повторений.
+
+// let a = [1, 2, 3, 5, 6, 8]; 
+// let b = [101, 2, 1, 10, 6, 8];
+// let commonElements = a.filter((element) => b.includes(element))
+// console.log([commonElements]) 
+
+// 3. Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из первого массива,
+// которых нет во втором массиве.
+
+// let a = [1, 2, 3, 5, 6, 8 ]; 
+// let b = [101, 2, 1, 10, 6 ];
+// let commonElements = a.filter((element) => b.includes(element))
+// let newArrayWithoutCommonElements = a.filter((element) => !commonElements.includes(element))
+// console.log([newArrayWithoutCommonElements]) 
+
+
