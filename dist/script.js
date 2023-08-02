@@ -374,14 +374,14 @@ var PrintMaсhine = /** @class */ (function () {
         this.family = family;
     }
     PrintMaсhine.prototype.print = function (text) {
-        document.write("<span style=\"font-size:" + this.size + "; color:" + this.color + "; font-family:" + this.family + ";\">" + text + "</span>");
+        document.write("<p style=\"font-size:" + this.size + "; color:" + this.color + "; font-family:" + this.family + ";\">" + text + "</p>");
     };
     return PrintMaсhine;
 }());
-var m = new PrintMaсhine("40px", "black", "calibri");
-m.print("Hallo,");
-m.print("<br />");
-m.print("world!");
+var header = new PrintMaсhine("40px", "black", "calibri");
+var text = new PrintMaсhine("18px", "#333", "calibri");
+var date = new PrintMaсhine("20px", "#dedede", "calibri");
+var tags = new PrintMaсhine("16px", "#555", "calibri");
 // Задание 2. Реализовать класс, описывающий новость (заголовок, текст,
 // массив тегов, дата публикации). В классе необходимо реализовать
 // один метод print, который выводит всю информацию в таком
@@ -396,27 +396,53 @@ var infoNews = /** @class */ (function () {
         this.heading = heading;
         this.text = text;
         this.arrayTags = arrayTags;
-        this.date = date;
+        this.date = new Date(date);
     }
     infoNews.prototype.getDate = function () {
-        var today = new Date(), yesterday = today.getDate() - 1, LastDate = new Date();
-        if (LastDate) {
-            if (today == LastDate) {
-                return 'today';
-            }
-            else if (yesterday == LastDate) {
-                return 'Вчера';
-            }
-            else {
-                return LastDate;
-            }
+        var today = new Date();
+        if (this.date.toLocaleDateString() == today.toLocaleDateString()) {
+            return 'today';
+        }
+        else if (this.date.valueOf() > (today.valueOf() - 1000 * 60 * 60 * 24 * 7)) {
+            return ((today.valueOf() - this.date.valueOf()) / (1000 * 60 * 60 * 24)).toFixed(0) + ' days ago';
+        }
+        else {
+            return this.date.toLocaleDateString();
         }
     };
-    infoNews.prototype.conclusion = function () {
-        document.write("< style=\"font-size:20px" + this.heading + "  font-size:10px" + this.getDate + " font-size:15px" + this.text + "  font-size:10px" + this.arrayTags);
+    infoNews.prototype.print = function () {
+        header.print(this.heading);
+        text.print(this.text);
+        date.print(this.getDate());
+        tags.print(this.arrayTags.join(' '));
     };
     return infoNews;
 }());
+var post = new infoNews('sdfsdfsd', 'sdfsdsdf', ['sfsd', 'sdf'], '2023-07-29');
+post.print();
+//   Задание 3
+// Реализовать класс, описывающий новостную ленту.
+// Класс должен содержать:
+// ■ массив новостей;
+// ■ get-свойство, которое возвращает количество новостей;
+// ■ метод для вывода на экран всех новостей;
+// ■ метод для добавления новости;
+// ■ метод для удаления новости;
+// ■ метод для сортировки новостей по дате (от последних но-
+// востей до старых);
+// ■ метод для поиска новостей по тегу (возвращает массив
+// новостей, в которых указан переданный в метод тег).
+// Продемонстрировать работу написанных методов.
+// class NewsFlow {
+//     array;
+//     text;
+//     arrayTags;
+//     date;
+// constructor (array, text, arrayTags, date ) {
+//   this.array = array;
+//   this.text = text;
+//   this.arrayTags = arrayTags;
+//   this.date = date;
 //  Module_2_Week_3. 
 // 1.Написать функцию, которая принимает 2 строки и срав-
 // нивает их длину. Функция возвращает 1, если в первой

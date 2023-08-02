@@ -342,7 +342,7 @@
 //     console.log(arr);
 //   }
 //  myFunction(myArray) 
-  
+
 // 2. Функция принимает массив и выводит только четные элементы.
 // const myArray = [1,2,4,6,3,4,77,334,1,2]
 // const evens = myArray.filter((number) => number % 2 === 0);
@@ -414,73 +414,69 @@
 // метода.
 
 class PrintMaсhine {
-    size;
-    color;
-    family;
-    constructor(size = "16px", color = "black", family = "Times New Roman") {
-        this.size = size;
-        this.color = color;
-        this.family = family;
-    }
-               print(text) {
-        document.write(`<span style="font-size:${this.size}; color:${this.color}; font-family:${this.family};">${text}</span>`);
-    }
+  size;
+  color;
+  family;
+  constructor(size = "16px", color = "black", family = "Times New Roman") {
+    this.size = size;
+    this.color = color;
+    this.family = family;
+  }
+  print(text) {
+    document.write(`<p style="font-size:${this.size}; color:${this.color}; font-family:${this.family};">${text}</p>`);
+  }
 
 }
 
-let m = new PrintMaсhine("40px", "black", "calibri");
-m.print("Hallo,")
-m.print("<br />");
-m.print("world!");
+let header = new PrintMaсhine("40px", "black", "calibri");
+let text = new PrintMaсhine("18px", "#333", "calibri");
+let date = new PrintMaсhine("20px", "#dedede", "calibri");
+let tags = new PrintMaсhine("16px", "#555", "calibri");
 
-    // Задание 2. Реализовать класс, описывающий новость (заголовок, текст,
-    // массив тегов, дата публикации). В классе необходимо реализовать
-    // один метод print, который выводит всю информацию в таком
-    // виде, как на рисунке 1
-    // Обратите внимание на то, как выводится дата:
-    // ■ если с даты публикации прошло менее дня, то выводится
-    // «сегодня»; если с даты публикации прошло менее недели, то выво-
-    // дится «N дней назад»;
-    // ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
+// Задание 2. Реализовать класс, описывающий новость (заголовок, текст,
+// массив тегов, дата публикации). В классе необходимо реализовать
+// один метод print, который выводит всю информацию в таком
+// виде, как на рисунке 1
+// Обратите внимание на то, как выводится дата:
+// ■ если с даты публикации прошло менее дня, то выводится
+// «сегодня»; если с даты публикации прошло менее недели, то выво-
+// дится «N дней назад»;
+// ■ в остальных случаях, полная дата в формате «дд.мм.гггг».
 
 
-    class infoNews {
-        heading;
-        text;
-        arrayTags;
-        date;
+class infoNews {
+  heading;
+  text;
+  arrayTags;
+  date: Date;
 
-    constructor (heading, text, arrayTags, date ) {
-      this.heading = heading;
-      this.text = text;
-      this.arrayTags = arrayTags;
-      this.date = date;
-  
-    }
+  constructor(heading, text, arrayTags, date: string) {
+    this.heading = heading;
+    this.text = text;
+    this.arrayTags = arrayTags;
+    this.date = new Date(date);
+  }
 
-    getDate(){            
-         let today = new Date(),          
-         yesterday = today.getDate() -1,           
-         LastDate = new Date();           
-     if (LastDate) {
-         if (today == LastDate) {                                                                
-             return 'today'                                                                                
-         } else if (yesterday == LastDate) {                                                     
-             return 'Вчера'                                                                                  
-         } else {                                                                                            
-             return LastDate;     
+  getDate() {
+    let today = new Date()
+    if (this.date.toLocaleDateString() == today.toLocaleDateString()) {
+      return 'today'
+    } else if (this.date.valueOf() > (today.valueOf() - 1000 * 60 * 60 * 24 * 7)) {
+      return ((today.valueOf() - this.date.valueOf()) / (1000 * 60 * 60 * 24)).toFixed(0) + ' days ago'
+    } else {
+      return this.date.toLocaleDateString()
     }
   }
-    }
-    conclusion(){
-        document.write(`< style="font-size:20px${this.heading}  font-size:10px${this.getDate} font-size:15px${this.text}  font-size:10px${this.arrayTags}`)
-      }
-      
-    }
-  
-  
-//   let foo = new infoNews ('НОВОСТЬ ДНЯ ', 'Вы также можете сделать это, чтобы получить дату на сегодня, завтра и вчера. ... Начиная с 2.10.5 moment поддерживает указание форматов вывода календаря для', '#lorem #lorem #lorem' )
-//   foo.conclusion(infoNews)
+  print() {
+    header.print(this.heading)
+    text.print(this.text)
+    date.print(this.getDate())
+    tags.print(this.arrayTags.join(' '))
+  }
+}
+
+const post = new infoNews('sdfsdfsd','sdfsdsdf',['sfsd','sdf'],'2023-07-29')
+post.print()
 
 //   Задание 3
 // Реализовать класс, описывающий новостную ленту.
@@ -508,8 +504,6 @@ m.print("world!");
 //   this.arrayTags = arrayTags;
 //   this.date = date;
 
-}
-
 //  Module_2_Week_3. 
 // 1.Написать функцию, которая принимает 2 строки и срав-
 // нивает их длину. Функция возвращает 1, если в первой
@@ -525,21 +519,21 @@ console.log(result)
 // 2.Написать функцию, которая переводит в верхний регистр
 // первый символ переданной строки.
 function ucFirst(str) {
-    if (!str) return str;
-  
-    return str[0].toUpperCase() + str.slice(1);
-  }
-  
-  console.log( ucFirst("germany") ); 
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+console.log(ucFirst("germany"));
 
 // 3.Написать функцию, которая считает количество гласных
 // букв в переданной строке.
 const vowel_count = string => [...string].filter(c => 'aeiou'.includes(c.toLowerCase())).length;
 
-console.log(vowel_count('aaaa'));            
-console.log(vowel_count('AAAA'));            
-console.log(vowel_count('foo BAR baz QUX')); 
-console.log(vowel_count('Hello, world!'));   
+console.log(vowel_count('aaaa'));
+console.log(vowel_count('AAAA'));
+console.log(vowel_count('foo BAR baz QUX'));
+console.log(vowel_count('Hello, world!'));
 
 // 4.Написать функцию для проверки спама в переданной
 // строке. Функция возвращает true, если строка содержит
@@ -548,14 +542,14 @@ console.log(vowel_count('Hello, world!'));
 // Функция должна быть нечувствительна к регистру.
 
 function checkSpam(str) {
-    let lowerStr = str.toLowerCase();
-  
-    return lowerStr.includes('viagra') || lowerStr.includes('xxx');
-  }
-  
-  console.log( checkSpam('buy ViAgRA now') );
-  console.log( checkSpam('free xxxxx') );
-  console.log( checkSpam("innocent rabbit") );
+  let lowerStr = str.toLowerCase();
+
+  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+}
+
+console.log(checkSpam('buy ViAgRA now'));
+console.log(checkSpam('free xxxxx'));
+console.log(checkSpam("innocent rabbit"));
 
 // 5.Написать функцию сокращения строки. Функция прини-
 // мает строку и ее максимальную длину. Если длина строки
