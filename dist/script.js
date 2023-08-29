@@ -1,84 +1,9 @@
-// // Задание 1
-// // Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
-// // 1 Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
-// // 2 Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую.
-// // 3 Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
-// const purchase = [
-//     {
-//         name: 'a',
-//         count: 10,
-//         purchased: true,
-//     },
-//     {
-//         name: 'b',
-//         count: 5,
-//         purchased: false,
-//     },
-//     {
-//         name: 'c',
-//         count: 3,
-//         purchased: true,
-//     },
-//     {
-//         name: 'd',
-//         count: 1,
-//         purchased: false,
-//     },
-// ];
-// const purchasedOl = document.querySelector('.purchase');
-// const showPurchaseButton = document.querySelector('.showPurchase');
-// const addPurchaseButton = document.querySelector('.addPurchase');
-// const setPurchasedButton = document.querySelector('.setPurchased');
-// function showPurchase() {
-//     if (purchasedOl) {
-//         purchasedOl.innerHTML = ``;
-//     }
-//     for (let el of purchase) {
-//         if (!el.purchased) {
-//             if (purchasedOl) {
-//                 purchasedOl.innerHTML += `<li>${el.name} необходимо купить ${el.count} штук</li>`;
-//             }
-//         }
-//     }
-//     for (let el of purchase) {
-//         if (el.purchased) {
-//             if (purchasedOl) {
-//                 purchasedOl.innerHTML += `<li>${el.name} куплено ${el.count} штук</li>`;
-//             }
-//         }
-//     }
-// }
-// function addPurchase() {
-//     const name = prompt('Введите назавание покупки');
-//     const count = +prompt('Введите количество');
-//     let find = false;
-//     for (let el of purchase) {
-//         if (el.name == name) {
-//             find = true;
-//             el.count += count;
-//         }
-//     }
-//     if (!find) {
-//         purchase.push({
-//             name,
-//             count,
-//             purchased: false
-//         });
-//     }
-//     showPurchase();
-// }
-// function setPurchased() {
-//     const name = prompt('Введите назавание покупки');
-//     for (let el of purchase) {
-//         if (el.name == name) {
-//             el.purchased = true;
-//         }
-//     }
-//     showPurchase();
-// }
-// showPurchaseButton?.addEventListener('click', showPurchase);
-// addPurchaseButton?.addEventListener('click', addPurchase);
-// setPurchasedButton?.addEventListener('click', setPurchased);
+// Module_2_Week_2
+// Задание 1
+// Создать массив «Список покупок». Каждый элемент массива является объектом, который содержит название продукта, необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом.
+// 1 Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
+// 2 Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую.
+// 3 Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
 var __spreadArrays = (this && this.__spreadArrays) || function () {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
     for (var r = Array(s), k = 0, i = 0; i < il; i++)
@@ -86,41 +11,125 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
             r[k] = a[j];
     return r;
 };
+var purchase = [
+    {
+        name: 'a',
+        count: 10,
+        purchased: true
+    },
+    {
+        name: 'b',
+        count: 5,
+        purchased: false
+    },
+    {
+        name: 'c',
+        count: 3,
+        purchased: true
+    },
+    {
+        name: 'd',
+        count: 1,
+        purchased: false
+    },
+];
+var purchasedOl = document.querySelector('.purchase');
+var showPurchaseButton = document.querySelector('.showPurchase');
+var addPurchaseButton = document.querySelector('.addPurchase');
+var setPurchasedButton = document.querySelector('.setPurchased');
+function showPurchase() {
+    if (purchasedOl) {
+        purchasedOl.innerHTML = "";
+    }
+    for (var _i = 0, purchase_1 = purchase; _i < purchase_1.length; _i++) {
+        var el = purchase_1[_i];
+        if (!el.purchased) {
+            if (purchasedOl) {
+                purchasedOl.innerHTML += "<li>" + el.name + " \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E \u043A\u0443\u043F\u0438\u0442\u044C " + el.count + " \u0448\u0442\u0443\u043A</li>";
+            }
+        }
+    }
+    for (var _a = 0, purchase_2 = purchase; _a < purchase_2.length; _a++) {
+        var el = purchase_2[_a];
+        if (el.purchased) {
+            if (purchasedOl) {
+                purchasedOl.innerHTML += "<li>" + el.name + " \u043A\u0443\u043F\u043B\u0435\u043D\u043E " + el.count + " \u0448\u0442\u0443\u043A</li>";
+            }
+        }
+    }
+}
+function addPurchase() {
+    var name = prompt('Введите назавание покупки');
+    var count = prompt('Введите количество');
+    var find = false;
+    for (var _i = 0, purchase_3 = purchase; _i < purchase_3.length; _i++) {
+        var el = purchase_3[_i];
+        if (el.name == name) {
+            find = true;
+            // @ts-ignore  
+            el.count += count;
+        }
+    }
+    if (!find) {
+        purchase.push({
+            // @ts-ignore
+            name: name,
+            // @ts-ignore 
+            count: count,
+            purchased: false
+        });
+    }
+    showPurchase();
+}
+function setPurchased() {
+    var name = prompt('Введите назавание покупки');
+    for (var _i = 0, purchase_4 = purchase; _i < purchase_4.length; _i++) {
+        var el = purchase_4[_i];
+        if (el.name == name) {
+            el.purchased = true;
+        }
+    }
+    showPurchase();
+}
+showPurchaseButton === null || showPurchaseButton === void 0 ? void 0 : showPurchaseButton.addEventListener('click', showPurchase);
+addPurchaseButton === null || addPurchaseButton === void 0 ? void 0 : addPurchaseButton.addEventListener('click', addPurchase);
+setPurchasedButton === null || setPurchasedButton === void 0 ? void 0 : setPurchasedButton.addEventListener('click', setPurchased);
 // // Задание 3
 // // Создать массив css - стилей(цвет, размер шрифта, выравнивание, подчеркивание и т.д.).Каждый элемент массива – это объект, состоящий из двух свойств: название стиля и значение стиля.
 // // Написать функцию, которая принимает массив стилей и текст, и выводит этот текст с помощью document.write() в тегах <p> </p>, добавив в открывающий тег атрибут style со всеми стилями, перечисленными в массиве.
-// const styleRed = [
-//     {
-//         name: 'color',
-//         value: 'red',
-//     },
-//     {
-//         name: 'text-decoration',
-//         value: 'underline',
-//     },
-// ];
-// const styleGreen = [
-//     {
-//         name: 'color',
-//         value: 'green',
-//     },
-//     {
-//         name: 'font-size',
-//         value: '20px',
-//     },
-// ];
-// const printTextDiv = document.querySelector('.printText');
-// function printText(style, text) {
-//     let styleStr = '';
-//     for (let el of style) {
-//         styleStr += `${el.name}:${el.value};`;
-//     }
-//     if (printTextDiv) {
-//         printTextDiv.innerHTML += `<p style=${styleStr}>${text}</p>`;
-//     }
-// }
-// printText(styleRed, 'fsdfsd sdf sdf sdf sg erwtw ');
-// printText(styleGreen, 'fsdfsd sdf sdf sdf sg erwtw sdf sdfsdf sdf ');
+var styleRed = [
+    {
+        name: 'color',
+        value: 'red'
+    },
+    {
+        name: 'text-decoration',
+        value: 'underline'
+    },
+];
+var styleGreen = [
+    {
+        name: 'color',
+        value: 'green'
+    },
+    {
+        name: 'font-size',
+        value: '20px'
+    },
+];
+var printTextDiv = document.querySelector('.printText');
+function printText(style, text) {
+    var styleStr = '';
+    for (var _i = 0, style_1 = style; _i < style_1.length; _i++) {
+        var el = style_1[_i];
+        styleStr += el.name + ":" + el.value + ";";
+    }
+    if (printTextDiv) {
+        printTextDiv.innerHTML += "<p style=" + styleStr + ">" + text + "</p>";
+    }
+}
+printText(styleRed, 'fsdfsd sdf sdf sdf sg erwtw ');
+printText(styleGreen, 'fsdfsd sdf sdf sdf sg erwtw sdf sdfsdf sdf ');
 // Задание 2
 // Создать массив, описывающий чек в магазине. Каждый элемент массива состоит из названия товара, количества и цены за
 // единицу товара. Написать следующие функции.
@@ -128,42 +137,83 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 // 2 Подсчет общей суммы покупки.
 // 3 Получение самой дорогой покупки в чеке.
 // 4 Подсчет средней стоимости одного товара в чеке.
-// function goods(nameOfGoods, count, price) {
-//     this.nameOfGoods = nameOfGoods
-//     this.count = count
-//     this.price = price
-//     this.sum   = this.price * this.count
-// }
-// let goodsList = [new goods("fresh", 2, 7), new goods("pasta", 1, 15), new goods("pepsi", 3, 3)]
-// const goodsListPrint = function() {
-//     let total = 0
-//     goodsList.forEach((item, index) => 
-//     {
-//         console.log(`${index + 1}) Name: ${item.nameOfGoods} | Count: ${item.count} | Price: ${item.price} - Sum: ${item.sum}`)
-//         total += item.sum
-//     })
-// }
-// const cheque = [
-//         {
-//             name: 'fresh',
-//             count: 10,
-//             price: 534,
-//         },
-//         {
-//             name: 'pasta',
-//             count: 5,
-//             price: 11,
-//         },
-//         {
-//             name: 'pepsi',
-//             count: 3,
-//             price: 32,
-//         },
-//     ]
-//         function showCheque (arr: any[]) {
-//             console.log(arr)
-//         }
-//         showCheque(cheque)
+function goods(nameOfGoods, count, price) {
+    this.nameOfGoods = nameOfGoods;
+    this.count = count;
+    this.price = price;
+    this.sum = this.price * this.count;
+}
+var goodsList = [new goods("fresh", 2, 7), new goods("pasta", 1, 15), new goods("pepsi", 3, 3)];
+var goodsListPrint = function () {
+    var total = 0;
+    goodsList.forEach(function (item, index) {
+        console.log(index + 1 + ") Name: " + item.nameOfGoods + " | Count: " + item.count + " | Price: " + item.price + " - Sum: " + item.sum);
+        total += item.sum;
+    });
+};
+var cheque = [
+    {
+        name: 'fresh',
+        count: 10,
+        price: 534
+    },
+    {
+        name: 'pasta',
+        count: 5,
+        price: 11
+    },
+    {
+        name: 'pepsi',
+        count: 3,
+        price: 32
+    },
+];
+function showCheque(arr) {
+    console.log(arr);
+}
+showCheque(cheque);
+// Задание 4.
+// Создать массив аудиторий академии. Объект-аудитория состоит из названия, количества посадочных мест (от 10 до 20) и
+// названия факультета, для которого она предназначена. Написать несколько функций для работы с ним.
+// 1.Вывод на экран всех аудиторий.
+// 2.Вывод на экран аудиторий для указанного факультета.
+// 3.Вывод на экран только тех аудиторий, которые подходят для
+// переданной группы. Объект-группа состоит из названия,
+// количества студентов и названия факультета.
+// 4.Функция сортировки аудиторий по количеству мест.
+// 5.Функция сортировки аудиторий по названию (по алфавиту).
+var university = [
+    {
+        "name": "classroom1",
+        "quantity": "15",
+        "faculty": "physics"
+    },
+    {
+        "name": "classroom2",
+        "quantity": "17",
+        "faculty": "mathematics"
+    },
+    {
+        "name": "classroom3",
+        "quantity": "13",
+        "faculty": "literature"
+    },
+];
+university.sort(function (a, b) {
+    if (a.name < b.name || b.name > c) {
+        return -1;
+    }
+    if (a.name > b.name) {
+        return 1;
+    }
+    return 0;
+});
+console.log(university);
+console.log(university);
+var universityLiterature = university.filter(function (university) { return university.faculty === "literature"; });
+console.log(universityLiterature);
+var universityQuantity = university.filter(function (university) { return university.quantity === "13"; });
+console.log(universityQuantity);
 // 6. Написать функцию, которая принимает минимальное и 
 // максимальное значения для диапазона, и выводит только 
 // те числа из диапазона, которые являются совершенными. 
@@ -501,8 +551,8 @@ console.log(checkSpam("innocent rabbit"));
 // Full review of the topic - Date.
 // 1. Создайте объект Date для даты: 20 февраля 2012 года, 3 часа 12 минут. Временная зона – местная.
 // Для вывода используйте alert.
-// let d = new Date(2012, 1, 20, 3, 12);
-// console.log( d );
+var d1 = new Date(2012, 1, 20, 3, 12);
+console.log(d1);
 // 2. Напишите функцию getWeekDay(date), показывающую день недели в коротком формате: «ПН», «ВТ», «СР», «ЧТ», «ПТ», «СБ», «ВС».
 function getWeekDay(date) {
     var days = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
@@ -516,3 +566,178 @@ function getLocalDay(date) {
     return [1, 2, 3, 4, 5, 6, 0][day];
 }
 console.log(getLocalDay(date1));
+// Module_1_Week_5.
+// 1. Написать функцию, которая вычисляет факториал заданного числа.
+var d = 6;
+function calculatingTheFactorial(a) {
+    var f = 1;
+    if (0 <= a && a <= 1) {
+        return f;
+    }
+    else if (a > 1) {
+        return f = a * calculatingTheFactorial(a - 1);
+    }
+}
+console.log("factorial number " + d + " is equal to " + calculatingTheFactorial(d));
+// 2. Написать функцию, которая выводит все числа из заданного пользователем диапазона в прямом порядке. И еще одну функцию – для вывода в обратном порядке.
+var start = 3;
+var end = 18;
+function outputsNumbers(min, max) {
+    var str = '';
+    if (min == max) {
+        return str = ' ' + min + ' ';
+    }
+    else {
+        return str = ' ' + min + ' ' + [outputsNumbers((min + 1), max)];
+    }
+}
+console.log("Numbers in the straight way: " + outputsNumbers(start, end));
+function outputsNumbers1(min, max) {
+    var str = '';
+    if (min == max) {
+        return str = ' ' + max + ' ';
+    }
+    else {
+        return str = ' ' + max + ' ' + [outputsNumbers1(min, max - 1)];
+    }
+}
+console.log("Numbers in the back way: " + outputsNumbers1(start, end));
+// 3. Написать функцию, которая выводит переданное ей число задом наперед. Например: число 1234 вывести как 4321.
+var num = '87654';
+function flipTheNumber(s, i) {
+    var a;
+    if (i == 0) {
+        return a = s[i];
+    }
+    else {
+        return a = s[i] + flipTheNumber(s, --i);
+    }
+}
+console.log("Flip this number: " + flipTheNumber(num, num.length - 1));
+// 4. Написать функцию, которая считает сумму цифр числа.
+// Например: число 1357, сумма 1 + 3 + 5 + 7 = 16.
+function sumDigitsOfTheNumber(s, i) {
+    var sum;
+    // console.log (s)
+    // console.log (i)
+    // console.log (Number(s[i]))
+    if (i == 0) {
+        return sum = +s[i];
+    }
+    else {
+        return sum = +s[i] + (+sumDigitsOfTheNumber(s, --i));
+    }
+}
+console.log("Sum of digits in the number \"" + num + "\" is equal: " + sumDigitsOfTheNumber(num, num.length - 1));
+// 5. Написать функцию, которая принимает число и выводит
+// соответствующее количество вложенных пар круглых скобок.
+// Например: число 4 – (((()))).
+var brackets = [];
+function printTheBrackets(num) {
+    if (num == 1) {
+        return brackets.unshift('(') + brackets.push(')');
+    }
+    else {
+        return brackets.unshift('(') + brackets.push(')') + printTheBrackets(--num);
+    }
+}
+console.log(printTheBrackets(5));
+console.log(brackets.join(''));
+// Module_1_Week_5. Во всех заданиях обязательно использовать рекурсию.
+// 1. Написать функцию возведения числа в степень.
+var the_number_being_exponentiated = 5;
+var degree = 3;
+function weRaiseToADegree(num, n) {
+    if (n == 1) {
+        return num;
+    }
+    else {
+        return num * weRaiseToADegree(num, n - 1);
+    }
+}
+console.log("Result: " + weRaiseToADegree(the_number_being_exponentiated, degree));
+// 2. Написать функцию поиска наибольшего общего делителя.
+var num1 = 36;
+var num2 = 24;
+function calculateTheGCD(a, s) {
+    if (s == 0) {
+        return a;
+    }
+    else if (a == 0) {
+        return s;
+    }
+    if (a > s) {
+        return calculateTheGCD(a % s, s);
+    }
+    else {
+        return calculateTheGCD(a, s % a);
+    }
+}
+console.log("The Biggest divider: " + calculateTheGCD(num1, num2));
+// 3. Написать функцию для поиска максимальной цифры в числе.
+var six_digits = 780235;
+function weFindTheMaximumFigure(n) {
+    var max;
+    if (n < 10) {
+        return n;
+    }
+    else {
+        return Math.max(n % 10, weFindTheMaximumFigure(Math.round(n / 10)));
+    }
+}
+console.log("Maximum number: " + weFindTheMaximumFigure(six_digits));
+// 4. Написать функцию, которая определяет простое ли переданное число.
+var simple_or_not = 5;
+var simple_or_not1 = 6;
+function weIdentifyAPrimeNumber(n, i) {
+    if (i === void 0) { i = 2; }
+    if (n == i && n % i == 0) {
+        return 'Simple number';
+    }
+    else if (n > i && n % i == 0) {
+        return 'Composite number';
+    }
+    else {
+        return weIdentifyAPrimeNumber(n, i + 1);
+    }
+}
+console.log("Provided number " + simple_or_not + " - " + weIdentifyAPrimeNumber(simple_or_not));
+console.log("Provided number " + simple_or_not1 + " - " + weIdentifyAPrimeNumber(simple_or_not1));
+// 5. Написать функцию для вывода всех множителей переданного числа в возрастающем порядке.
+// Например: число 18 – множители 2 * 3 * 3.
+var factorization = 8;
+var factorization1 = 72;
+var a = [];
+function weDecomposeIntoMultipliers(n, a, i) {
+    if (a === void 0) { a = []; }
+    if (n == i) {
+        //@ts-ignore
+        a.push(n);
+        return a;
+    }
+    else if (n >= i && n % i == 0) {
+        //@ts-ignore
+        a.push(i);
+        return weDecomposeIntoMultipliers(n / i, a, i);
+    }
+    else {
+        return weDecomposeIntoMultipliers(n, a, i + 1);
+    }
+}
+console.log("Multiplier of the provided number " + factorization + " - " + weDecomposeIntoMultipliers(factorization, a = [], 2).join('*'));
+console.log("Multiplier of the provided number " + factorization1 + " - " + weDecomposeIntoMultipliers(factorization1, a = [], 2).join('*'));
+// 6. Написать функцию, которая возвращает число Фибоначчи по переданному порядковому номеру.
+// Числа Фибоначчи: 1, 1, 2, 3, 5, 8, 13… Ряд основывается на том, что каждое число равно сумме двух предыдущих чисел.
+// Например: порядковый номер 3 – число 2, порядковый номер 6 – число 8.
+var numFib = 10;
+var numFib1 = 15;
+function calculateTheFibonacciNumber(n) {
+    if (n <= 1) {
+        return n;
+    }
+    else {
+        return calculateTheFibonacciNumber(n - 1) + calculateTheFibonacciNumber(n - 2);
+    }
+}
+console.log("Finding the index number " + numFib + " Fibonacci number " + calculateTheFibonacciNumber(numFib));
+console.log("Finding the index number " + numFib1 + " Fibonacci number " + calculateTheFibonacciNumber(numFib1));
