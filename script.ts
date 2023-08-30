@@ -6,86 +6,86 @@
 // 2 Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом, необходимо увеличивать количество в существующей покупке, а не добавлять новую.
 // 3 Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
 
-const purchase = [
-	{
-		name: 'a',
-		count: 10,
-		purchased: true,
-	},
-	{
-		name: 'b',
-		count: 5,
-		purchased: false,
-	},
-	{
-		name: 'c',
-		count: 3,
-		purchased: true,
-	},
-	{
-		name: 'd',
-		count: 1,
-		purchased: false,
-	},
-];
+// const purchase = [
+// 	{
+// 		name: 'a',
+// 		count: 10,
+// 		purchased: true,
+// 	},
+// 	{
+// 		name: 'b',
+// 		count: 5,
+// 		purchased: false,
+// 	},
+// 	{
+// 		name: 'c',
+// 		count: 3,
+// 		purchased: true,
+// 	},
+// 	{
+// 		name: 'd',
+// 		count: 1,
+// 		purchased: false,
+// 	},
+// ];
 
-const purchasedOl = document.querySelector('.purchase');
-const showPurchaseButton = document.querySelector('.showPurchase');
-const addPurchaseButton = document.querySelector('.addPurchase');
-const setPurchasedButton = document.querySelector('.setPurchased');
-function showPurchase() {
-	if (purchasedOl) {
-		purchasedOl.innerHTML = ``;
-	}
-	for (let el of purchase) {
-		if (!el.purchased) {
-			if (purchasedOl) {
-				purchasedOl.innerHTML += `<li>${el.name} необходимо купить ${el.count} штук</li>`;
-			}
-		}
-	}
-	for (let el of purchase) {
-		if (el.purchased) {
-			if (purchasedOl) {
-				purchasedOl.innerHTML += `<li>${el.name} куплено ${el.count} штук</li>`;
-			}
-		}
-	}
-}
-function addPurchase() {
-	const name = prompt('Введите назавание покупки');
-	const count = prompt('Введите количество');
-	let find = false;
-	for (let el of purchase) {
-		if (el.name == name) {
-			find = true;
-			// @ts-ignore  
-			el.count += count;
-		}
-	}
-	if (!find) {
-		purchase.push({
-			// @ts-ignore
-			name,
-			// @ts-ignore 
-			count,
-			purchased: false
-		});
-	}
-	showPurchase();
-}
-function setPurchased() {
-	const name = prompt('Введите назавание покупки');
-	for (let el of purchase) {
-		if (el.name == name) {
-			el.purchased = true;
-		}
-	}
-	showPurchase();
-}
-showPurchaseButton?.addEventListener('click', showPurchase);
-addPurchaseButton?.addEventListener('click', addPurchase);
-setPurchasedButton?.addEventListener('click', setPurchased);
+// const purchasedOl = document.querySelector('.purchase');
+// const showPurchaseButton = document.querySelector('.showPurchase');
+// const addPurchaseButton = document.querySelector('.addPurchase');
+// const setPurchasedButton = document.querySelector('.setPurchased');
+// function showPurchase() {
+// 	if (purchasedOl) {
+// 		purchasedOl.innerHTML = ``;
+// 	}
+// 	for (let el of purchase) {
+// 		if (!el.purchased) {
+// 			if (purchasedOl) {
+// 				purchasedOl.innerHTML += `<li>${el.name} необходимо купить ${el.count} штук</li>`;
+// 			}
+// 		}
+// 	}
+// 	for (let el of purchase) {
+// 		if (el.purchased) {
+// 			if (purchasedOl) {
+// 				purchasedOl.innerHTML += `<li>${el.name} куплено ${el.count} штук</li>`;
+// 			}
+// 		}
+// 	}
+// }
+// function addPurchase() {
+// 	const name = prompt('Введите назавание покупки');
+// 	const count = prompt('Введите количество');
+// 	let find = false;
+// 	for (let el of purchase) {
+// 		if (el.name == name) {
+// 			find = true;
+// 			// @ts-ignore  
+// 			el.count += count;
+// 		}
+// 	}
+// 	if (!find) {
+// 		purchase.push({
+// 			// @ts-ignore
+// 			name,
+// 			// @ts-ignore 
+// 			count,
+// 			purchased: false
+// 		});
+// 	}
+// 	showPurchase();
+// }
+// function setPurchased() {
+// 	const name = prompt('Введите назавание покупки');
+// 	for (let el of purchase) {
+// 		if (el.name == name) {
+// 			el.purchased = true;
+// 		}
+// 	}
+// 	showPurchase();
+// }
+// showPurchaseButton?.addEventListener('click', showPurchase);
+// addPurchaseButton?.addEventListener('click', addPurchase);
+// setPurchasedButton?.addEventListener('click', setPurchased);
 
 // // Задание 3
 // // Создать массив css - стилей(цвет, размер шрифта, выравнивание, подчеркивание и т.д.).Каждый элемент массива – это объект, состоящий из двух свойств: название стиля и значение стиля.
@@ -208,17 +208,7 @@ let university = [
 	},
 ]
 
-university.sort(function (a, b) {
-	if (a.name < b.name || b.name > c) {
-		return -1;
-	}
-	if (a.name > b.name) {
-		return 1;
-	}
-	return 0;
-});
 
-console.log(university);
 console.log(university)
 
 let universityLiterature = university.filter(university => university.faculty === "literature");
@@ -272,157 +262,170 @@ console.log(universityQuantity);
 	// Modul_1_Week_4
 	// 1.Написать функцию, которая принимает 2 числа и возвра-
 	// щает меньшее из них.
-	// function takeNumbers () {
-	//     let a = +(prompt("write the first number"));
-	//     let b = +(prompt("write the second number"));
-	//     if (a>b) {
-	//         console.log (b)
-	//     } else if (a<b) {
-	//         console.log (a)
-	//     }
-	// }
-	// takeNumbers ()
+	function takeNumbers () {
+	    let a = 12;
+	    let b = 45;
+	    if (a>b) {
+	        console.log (b)
+	    } else if (a<b) {
+	        console.log (a)
+	    }
+	}
+	takeNumbers ()
 
 	// 2. Написать функцию, которая возводит переданное число
 	// в указанную степень.
-	// function exponentNumber () {
-	//     let a = +(prompt("write the number"));
-	//     let b = +(prompt("write the exponent"));
-	//     console.log (a**b)
-	// }
-	// exponentNumber ()
+	function exponentNumber () {
+	    let a = 4;
+	    let b = 16;
+	    console.log (a**b)
+	}
+	exponentNumber ()
 
 	// 3. Написать функцию, которая принимает 2 числа и знак
 	// (+ - * /), считает пример и возвращает результат.
-	// function calculatorOfNumbers () {
-	//     let a = +(prompt("write the first number"));
-	//     let b = +(prompt("write the second number"));
-	//     let c = prompt("write the sign");
-	//     if (c=='+') return a+b
-	//     if (c=='*') return a*b
-	//     if (c=='-') return a-b
-	//     if (c=='/') return a/b
-	// }
+	function calculatorOfNumbers () {
+	    let a = 71;
+	    let b = 36;
+	    let c = '+';
+	    if (c=='+') return a+b
+	    if (c=='*') return a*b
+	    if (c=='-') return a-b
+	    if (c=='/') return a/b
+	}
 
-	// console.log(calculatorOfNumbers ())
+	console.log(calculatorOfNumbers ())
 
 	// 4. Написать функцию, которая проверяет, является ли пере-
 	// данное ей число простым.
-	// function primeNumber () {
-	//     let a = +(prompt("write the first number"));
-	//     if (a/a && a/1) {
-	//         console.log ('the number is prime')
-	//     } else {
-	//         console.log ('the number is composite')
-	//     }
-	// }
-	// primeNumber()
+	function primeNumber () {
+	    let a = 2;
+	    if (a/a && a/1) {
+	        console.log ('the number is prime')
+	    } else {
+	        console.log ('the number is composite')
+	    }
+	}
+	primeNumber()
 
 	// 5. Написать функцию, которая принимает число и выводит
 	// таблицу умножения для этого числа. Вызовите функцию
 	// для всех чисел от 2 до 9
 
-	// function multiplicationCalculator() {
-	// let number = parseInt(prompt('write the number'));
-	// for(let i = 2; i <= 9; i++) {
+	function multiplicationCalculator() {
+	let number = 24;
+	for(let i = 2; i <= 9; i++) {
 
-	//     let result = i * number;
+	    let result = i * number;
 
-	//     console.log(`${number} * ${i} = ${result}`);
-	// }
-	// }
-	// multiplicationCalculator ()
+	    console.log(`${number} * ${i} = ${result}`);
+	}
+	}
+	multiplicationCalculator ()
 
 	// 6. Написать функцию, которая реализует работу оператора %.
 	// Функция принимает 2 параметра и возвращает остаток от
 	// деления первого параметра на второй. В функции исполь-
 	// зовать только + - * /, оператор % не использовать.
 
-	// function divideOst(num1,num2) {
-	//     let mnoz = 1
-	//     let accum = num1-num2
-	//     while (accum>num2) {
-	//         accum -= num2
-	//         mnoz++
-	//     }
-	//     return num1 - num2*mnoz
-	// }
-	// console.log(divideOst(11,2))
-	// console.log(divideOst(11,3))
-	// console.log(divideOst(11,4))
+	function divideOst(num1,num2) {
+	    let mnoz = 1
+	    let accum = num1-num2
+	    while (accum>num2) {
+	        accum -= num2
+	        mnoz++
+	    }
+	    return num1 - num2*mnoz
+	}
+	console.log(divideOst(11,2))
+	console.log(divideOst(11,3))
+	console.log(divideOst(11,4))
 
 	// 7. Написать функцию, которая принимает от 1 до 5 чисел и
 	// возвращает их сумму.
-	// function sumOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,e=0) {
-	//     return a+b+c+d+e    
-	// }
-	// console.log(sumOfTheNumbersFromOneToFive(9))
-	// console.log(sumOfTheNumbersFromOneToFive(1,2))
-	// console.log(sumOfTheNumbersFromOneToFive(9,5,8))
-	// console.log(sumOfTheNumbersFromOneToFive(9,6,7,3))
-	// console.log(sumOfTheNumbersFromOneToFive(9,3,4,2,3))
+	function sumOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,e=0) {
+	    return a+b+c+d+e    
+	}
+	console.log(sumOfTheNumbersFromOneToFive(9))
+	console.log(sumOfTheNumbersFromOneToFive(1,2))
+	console.log(sumOfTheNumbersFromOneToFive(9,5,8))
+	console.log(sumOfTheNumbersFromOneToFive(9,6,7,3))
+	console.log(sumOfTheNumbersFromOneToFive(9,3,4,2,3))
 
 
 	// 8.Написать функцию, которая принимает от 1 до 5 чисел и
 	// возвращает большее из них.
-	// function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
-	//     if (a>b && a>c && a>d && a>f)
-	// {
-	//     return a;
-	// }
-	// else if (b>a && b>c && b>d && b>f)
-	// {
-	//     return b;
-	// }
-	// else if (c>a && c>b && c>d && c>f)
-	// {
-	//     return c;
-	// }
-	// else if (d>a && d>c && d>b && d>f)
-	// {
-	//     return d;
-	// }
-	// else
-	// {
-	//     return f
-	// }
-	// }
-	// console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
+	function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
+	    if (a>b && a>c && a>d && a>f)
+	{
+	    return a;
+	}
+	else if (b>a && b>c && b>d && b>f)
+	{
+	    return b;
+	}
+	else if (c>a && c>b && c>d && c>f)
+	{
+	    return c;
+	}
+	else if (d>a && d>c && d>b && d>f)
+	{
+	    return d;
+	}
+	else
+	{
+	    return f
+	}
+	}
+	console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
 
 	// Module 2 week 2.
 	// Задание 1
 	// Создать массив из 10 случайных чисел и написать несколько
 	// функций для работы с ним.
-	// let arr = [1,2,4,6,3,4,77,334,1,2]
+	let arr = [1,2,4,6,3,4,77,334,1,2]
 	// 1. Функция принимает массив и выводит его на экран.
-	// const myArray = [1,2,4,6,3,4,77,334,1,2]
-	// function myFunction(arr: any []) {
-	//     console.log(arr);
-	//   }
-	//  myFunction(myArray) 
+	const myArray = [1,2,4,6,3,4,77,334,1,2]
+	function myFunction(arr: any []) {
+	    console.log(arr);
+	  }
+	 myFunction(myArray) 
 
 	// 2. Функция принимает массив и выводит только четные элементы.
-	// const myArray = [1,2,4,6,3,4,77,334,1,2]
-	// const evens = myArray.filter((number) => number % 2 === 0);
+	const myArray1 = [1,2,4,6,3,4,77,334,1,2]
+	const evens = myArray1.filter((number) => number % 2 === 0);
 
-	// console.log(evens);
+	console.log(evens);
 
 	// 3. Функция принимает массив и возвращает сумму всех элементов массива.
-	// let arr = [1,2,4,6,3,4,77,334,1,2];
-	// let result = arr.reduce((sum, current) => sum + current, 0);
+	let arr2 = [1,2,4,6,3,4,77,334,1,2];
+	let result2 = arr2.reduce((sum, current) => sum + current, 0);
 
-	// console.log(result)
+	console.log(result2)
 	// 4. Функция принимает массив и возвращает его максималь-ный элемент.
-	// let arr = [1,2,4,6,3,4,77,334,1,2];
-	// let maxElement = Math.max.apply(null, arr);
-	// console.log(maxElement)
-	//     ;
+	let arr3 = [1,2,4,6,3,4,77,334,1,2];
+	let maxElement = Math.max.apply(null, arr3);
+	console.log(maxElement)
+	
 
 	// 5. Функция добавления нового элемента в массив по указанному индексу.
-
+	const numbers = [1, 2, 4, 5]
+	const index = 2;
+	const newNumbers = [
+		numbers.slice(0, index),
+		3,
+		numbers.slice(index)
+	];
+	console.log(newNumbers)
 
 	// 6. Функция удаления элемента из массива по указанному индексу.
+	const arrayOfNumbers = [1, 2, 3, 4];
 
+	const previousSecondElementOfTheArray = arrayOfNumbers.splice(1, 1);
+	
+	console.log(arrayOfNumbers); 
+	
+	console.log(previousSecondElementOfTheArray)
 
 	// Задание 2.
 	// Создать еще один массив из 5 случайных чисел и написать
@@ -431,32 +434,32 @@ console.log(universityQuantity);
 	// 1. Функция принимает 2 массива и возвращает новый мас-
 	// сив, в котором собраны все элементы из двух массивов
 	// без повторений.
-	// let a = [1, 2, 3]; 
-	// let b = [101, 2, 1, 10];
-	// let c = a.concat(b)
-	// let d = c.filter((item, positive) => c.indexOf(item) === positive)
+	let ab = [1, 2, 3]; 
+	let b = [101, 2, 1, 10];
+	let c = ab.concat(b)
+	let da = c.filter((item, positive) => c.indexOf(item) === positive)
 
-	// console.log(d) 
+	console.log(da) 
 
 	// 2.Функция принимает 2 массива и возвращает новый массив,
 	// в котором собраны общие элементы (то есть элементы,
 	// которые встречаются и в первом и во втором массивах)
 	// без повторений.
 
-	// let a = [1, 2, 3, 5, 6, 8]; 
-	// let b = [101, 2, 1, 10, 6, 8];
-	// let commonElements = a.filter((element) => b.includes(element))
-	// console.log([commonElements]) 
+	let ae = [1, 2, 3, 5, 6, 8]; 
+	let be = [101, 2, 1, 10, 6, 8];
+	let commonElements = ae.filter((element) => be.includes(element))
+	console.log([commonElements]) 
 
 	// 3. Функция принимает 2 массива и возвращает новый мас-
 	// сив, в котором собраны все элементы из первого массива,
 	// которых нет во втором массиве.
 
-	// let a = [1, 2, 3, 5, 6, 8 ]; 
-	// let b = [101, 2, 1, 10, 6 ];
-	// let commonElements = a.filter((element) => b.includes(element))
-	// let newArrayWithoutCommonElements = a.filter((element) => !commonElements.includes(element))
-	// console.log([newArrayWithoutCommonElements]) 
+	let ar = [1, 2, 3, 5, 6, 8 ]; 
+	let br = [101, 2, 1, 10, 6 ];
+	let commonElements1 = ar.filter((element) => br.includes(element))
+	let newArrayWithoutCommonElements = ar.filter((element) => !commonElements1.includes(element))
+	console.log([newArrayWithoutCommonElements]) 
 
 
 
@@ -619,13 +622,30 @@ console.log(checkSpam("innocent rabbit"));
 // “Hello...”.
 
 
+
 // 6.Написать функцию, которая проверяет, является ли пере-
 // данная строка палиндромом.
-
+function palindrome(str) {
+	let re = /[^A-Za-z0-9]/g;
+	str = str.toLowerCase().replace(re, '');
+	let len = str.length;
+	for (let i = 0; i < len/2; i++) {
+	  if (str[i] !== str[len - 1 - i]) {
+		  return false;
+	  }
+	}
+	return true;
+   }
+   console.log(palindrome("A man, a plan, a canal. Panama"))
 
 // 7.Написать функцию, которая считает количество слов в
 // предложении.
 
+function truncate(str, maxlength) {
+	return (str.length > maxlength) ?
+	  str.slice(0, maxlength - 1) + '…' : str;
+  }
+  console.log(truncate("maximum power", 10))
 
 // 8.Написать функцию, которая возвращает самое длинное
 // слово из предложения.
