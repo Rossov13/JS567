@@ -286,9 +286,9 @@ primeNumber();
 // для всех чисел от 2 до 9
 function multiplicationCalculator() {
     var number = 24;
-    for (var i = 2; i <= 9; i++) {
-        var result_1 = i * number;
-        console.log(number + " * " + i + " = " + result_1);
+    for (var i_1 = 2; i_1 <= 9; i_1++) {
+        var result_1 = i_1 * number;
+        console.log(number + " * " + i_1 + " = " + result_1);
     }
 }
 multiplicationCalculator();
@@ -548,8 +548,8 @@ function palindrome(str) {
     var re = /[^A-Za-z0-9]/g;
     str = str.toLowerCase().replace(re, '');
     var len = str.length;
-    for (var i = 0; i < len / 2; i++) {
-        if (str[i] !== str[len - 1 - i]) {
+    for (var i_2 = 0; i_2 < len / 2; i_2++) {
+        if (str[i_2] !== str[len - 1 - i_2]) {
             return false;
         }
     }
@@ -764,5 +764,17 @@ function calculateTheFibonacciNumber(n) {
 }
 console.log("Finding the index number " + numFib + " Fibonacci number " + calculateTheFibonacciNumber(numFib));
 console.log("Finding the index number " + numFib1 + " Fibonacci number " + calculateTheFibonacciNumber(numFib1));
-// 1313. Дан список сообщений с кнопками для удаления [x]. Заставьте кнопки работать.
-// В результате должно работать вот так:
+// A1. Infinityloop wit multiplication of different numbers.
+while (true) {
+    // let n = Number(prompt('Give me an integer: '));
+    if (n == 0) {
+        break;
+    }
+    console.log(n + ' * ' + n + ' = ' + (n * n));
+}
+console.log('done');
+// A1(2). Infinity loop Example.
+var i = 0;
+while (i < 10) {
+    console.log(i);
+}

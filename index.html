@@ -188,6 +188,50 @@ console.log(ageElems[1],ageElems[0].toString()); // [object HTMLInputElement]
   // please note: options start from zero, so index 2 means the 3rd option.
 </script>
 
+<select id="genres">
+  <option value="rock">Rock</option>
+  <option value="blues" selected>Blues</option>
+</select>
+
+<script>
+  // 1)
+  let selectedOption = genres.options[genres.selectedIndex];
+  console.log( selectedOption.value );
+
+  // 2)
+  let newOption = new Option("Classic", "classic");
+  genres.append(newOption);
+
+  // 3)
+  newOption.selected = true;
+</script>
+
+<style>
+  .invalid { border-color: red; }
+  #error { color: red }
+</style>
+
+Your email please: <input type="email" id="input">
+
+<div id="error"></div>
+
+<script>
+input.onblur = function() {
+  if (!input.value.includes('@')) { // not email
+    input.classList.add('invalid');
+    error.innerHTML = 'Please enter a correct email.'
+  }
+};
+
+input.onfocus = function() {
+  if (this.classList.contains('invalid')) {
+    // remove the "error" indication, because the user wants to re-enter something
+    this.classList.remove('invalid');
+    error.innerHTML = "";
+  }
+};
+</script>
+
 <script src="dist/script.js"></script>
 
 </body>

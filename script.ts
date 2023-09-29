@@ -222,272 +222,267 @@ console.log(universityQuantity);
 
 
 
-	// 6. Написать функцию, которая принимает минимальное и 
-	// максимальное значения для диапазона, и выводит только 
-	// те числа из диапазона, которые являются совершенными. 
-	// Используйте написанную ранее функцию, чтобы узнавать, 
-	// совершенное число или нет.
+// 6. Написать функцию, которая принимает минимальное и 
+// максимальное значения для диапазона, и выводит только 
+// те числа из диапазона, которые являются совершенными. 
+// Используйте написанную ранее функцию, чтобы узнавать, 
+// совершенное число или нет.
 
-	// let perfectNumber = +prompt("write the number for the start of the range");
-	// function perf(n) {
-	//     let n1 = 0;
-	//     for (let i = 1; i < n; i++) {
-	//         if (n % i == 0) {
-	//             n1 = n1 + i;
-	//         }
-	//     }
-	//     if (n1 == n) {
-	//         return true;
-	//     } else {
-	//         return false;
-	//     }
-	// }
+// let perfectNumber = +prompt("write the number for the start of the range");
+// function perf(n) {
+//     let n1 = 0;
+//     for (let i = 1; i < n; i++) {
+//         if (n % i == 0) {
+//             n1 = n1 + i;
+//         }
+//     }
+//     if (n1 == n) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
-	// let diapazonFrom = +prompt("write the number for the start of the range");
-	// let diapazonTo = +prompt("write the number for the end of the range");
+// let diapazonFrom = +prompt("write the number for the start of the range");
+// let diapazonTo = +prompt("write the number for the end of the range");
 
-	// function findPerfectNumberInRange(from, to) {
-	//     let str=''
-	//     for (from; from<=to; from++) {
-	//         if (perf(from)) {
-	//             str += from + ', '
-	//         }
-	//     }
-	//     console.log(str)
-	// }
+// function findPerfectNumberInRange(from, to) {
+//     let str=''
+//     for (from; from<=to; from++) {
+//         if (perf(from)) {
+//             str += from + ', '
+//         }
+//     }
+//     console.log(str)
+// }
 
-	// findPerfectNumberInRange(diapazonFrom, diapazonTo)
+// findPerfectNumberInRange(diapazonFrom, diapazonTo)
 
 
-	// Modul_1_Week_4
-	// 1.Написать функцию, которая принимает 2 числа и возвра-
-	// щает меньшее из них.
-	function takeNumbers () {
-	    let a = 12;
-	    let b = 45;
-	    if (a>b) {
-	        console.log (b)
-	    } else if (a<b) {
-	        console.log (a)
-	    }
+// Modul_1_Week_4
+// 1.Написать функцию, которая принимает 2 числа и возвра-
+// щает меньшее из них.
+function takeNumbers() {
+	let a = 12;
+	let b = 45;
+	if (a > b) {
+		console.log(b)
+	} else if (a < b) {
+		console.log(a)
 	}
-	takeNumbers ()
+}
+takeNumbers()
 
-	// 2. Написать функцию, которая возводит переданное число
-	// в указанную степень.
-	function exponentNumber () {
-	    let a = 4;
-	    let b = 16;
-	    console.log (a**b)
+// 2. Написать функцию, которая возводит переданное число
+// в указанную степень.
+function exponentNumber() {
+	let a = 4;
+	let b = 16;
+	console.log(a ** b)
+}
+exponentNumber()
+
+// 3. Написать функцию, которая принимает 2 числа и знак
+// (+ - * /), считает пример и возвращает результат.
+function calculatorOfNumbers() {
+	let a = 71;
+	let b = 36;
+	let c = '+';
+	if (c == '+') return a + b
+	if (c == '*') return a * b
+	if (c == '-') return a - b
+	if (c == '/') return a / b
+}
+
+console.log(calculatorOfNumbers())
+
+// 4. Написать функцию, которая проверяет, является ли пере-
+// данное ей число простым.
+function primeNumber() {
+	let a = 2;
+	if (a / a && a / 1) {
+		console.log('the number is prime')
+	} else {
+		console.log('the number is composite')
 	}
-	exponentNumber ()
+}
+primeNumber()
 
-	// 3. Написать функцию, которая принимает 2 числа и знак
-	// (+ - * /), считает пример и возвращает результат.
-	function calculatorOfNumbers () {
-	    let a = 71;
-	    let b = 36;
-	    let c = '+';
-	    if (c=='+') return a+b
-	    if (c=='*') return a*b
-	    if (c=='-') return a-b
-	    if (c=='/') return a/b
-	}
+// 5. Написать функцию, которая принимает число и выводит
+// таблицу умножения для этого числа. Вызовите функцию
+// для всех чисел от 2 до 9
 
-	console.log(calculatorOfNumbers ())
-
-	// 4. Написать функцию, которая проверяет, является ли пере-
-	// данное ей число простым.
-	function primeNumber () {
-	    let a = 2;
-	    if (a/a && a/1) {
-	        console.log ('the number is prime')
-	    } else {
-	        console.log ('the number is composite')
-	    }
-	}
-	primeNumber()
-
-	// 5. Написать функцию, которая принимает число и выводит
-	// таблицу умножения для этого числа. Вызовите функцию
-	// для всех чисел от 2 до 9
-
-	function multiplicationCalculator() {
+function multiplicationCalculator() {
 	let number = 24;
-	for(let i = 2; i <= 9; i++) {
+	for (let i = 2; i <= 9; i++) {
 
-	    let result = i * number;
+		let result = i * number;
 
-	    console.log(`${number} * ${i} = ${result}`);
+		console.log(`${number} * ${i} = ${result}`);
 	}
+}
+multiplicationCalculator()
+
+// 6. Написать функцию, которая реализует работу оператора %.
+// Функция принимает 2 параметра и возвращает остаток от
+// деления первого параметра на второй. В функции исполь-
+// зовать только + - * /, оператор % не использовать.
+
+function divideOst(num1, num2) {
+	let mnoz = 1
+	let accum = num1 - num2
+	while (accum > num2) {
+		accum -= num2
+		mnoz++
 	}
-	multiplicationCalculator ()
+	return num1 - num2 * mnoz
+}
+console.log(divideOst(11, 2))
+console.log(divideOst(11, 3))
+console.log(divideOst(11, 4))
 
-	// 6. Написать функцию, которая реализует работу оператора %.
-	// Функция принимает 2 параметра и возвращает остаток от
-	// деления первого параметра на второй. В функции исполь-
-	// зовать только + - * /, оператор % не использовать.
+// 7. Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает их сумму.
+function sumOfTheNumbersFromOneToFive(a, b = 0, c = 0, d = 0, e = 0) {
+	return a + b + c + d + e
+}
+console.log(sumOfTheNumbersFromOneToFive(9))
+console.log(sumOfTheNumbersFromOneToFive(1, 2))
+console.log(sumOfTheNumbersFromOneToFive(9, 5, 8))
+console.log(sumOfTheNumbersFromOneToFive(9, 6, 7, 3))
+console.log(sumOfTheNumbersFromOneToFive(9, 3, 4, 2, 3))
 
-	function divideOst(num1,num2) {
-	    let mnoz = 1
-	    let accum = num1-num2
-	    while (accum>num2) {
-	        accum -= num2
-	        mnoz++
-	    }
-	    return num1 - num2*mnoz
+
+// 8.Написать функцию, которая принимает от 1 до 5 чисел и
+// возвращает большее из них.
+function theBiggestOfTheNumbersFromOneToFive(a, b = 0, c = 0, d = 0, f = 0) {
+	if (a > b && a > c && a > d && a > f) {
+		return a;
 	}
-	console.log(divideOst(11,2))
-	console.log(divideOst(11,3))
-	console.log(divideOst(11,4))
-
-	// 7. Написать функцию, которая принимает от 1 до 5 чисел и
-	// возвращает их сумму.
-	function sumOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,e=0) {
-	    return a+b+c+d+e    
+	else if (b > a && b > c && b > d && b > f) {
+		return b;
 	}
-	console.log(sumOfTheNumbersFromOneToFive(9))
-	console.log(sumOfTheNumbersFromOneToFive(1,2))
-	console.log(sumOfTheNumbersFromOneToFive(9,5,8))
-	console.log(sumOfTheNumbersFromOneToFive(9,6,7,3))
-	console.log(sumOfTheNumbersFromOneToFive(9,3,4,2,3))
-
-
-	// 8.Написать функцию, которая принимает от 1 до 5 чисел и
-	// возвращает большее из них.
-	function theBiggestOfTheNumbersFromOneToFive (a,b=0,c=0,d=0,f=0) {
-	    if (a>b && a>c && a>d && a>f)
-	{
-	    return a;
+	else if (c > a && c > b && c > d && c > f) {
+		return c;
 	}
-	else if (b>a && b>c && b>d && b>f)
-	{
-	    return b;
+	else if (d > a && d > c && d > b && d > f) {
+		return d;
 	}
-	else if (c>a && c>b && c>d && c>f)
-	{
-	    return c;
+	else {
+		return f
 	}
-	else if (d>a && d>c && d>b && d>f)
-	{
-	    return d;
+}
+console.log(theBiggestOfTheNumbersFromOneToFive(1, 2, 8, 4, 6))
+
+// Module 2 week 2.
+// Задание 1
+// Создать массив из 10 случайных чисел и написать несколько
+// функций для работы с ним.
+let arr = [1, 2, 4, 6, 3, 4, 77, 334, 1, 2]
+// 1. Функция принимает массив и выводит его на экран.
+const myArray = [1, 2, 4, 6, 3, 4, 77, 334, 1, 2]
+function myFunction(arr: any[]) {
+	console.log(arr);
+}
+myFunction(myArray)
+
+// 2. Функция принимает массив и выводит только четные элементы.
+const myArray1 = [1, 2, 4, 6, 3, 4, 77, 334, 1, 2]
+const evens = myArray1.filter((number) => number % 2 === 0);
+
+console.log(evens);
+
+// 3. Функция принимает массив и возвращает сумму всех элементов массива.
+let arr2 = [1, 2, 4, 6, 3, 4, 77, 334, 1, 2];
+let result2 = arr2.reduce((sum, current) => sum + current, 0);
+
+console.log(result2)
+// 4. Функция принимает массив и возвращает его максималь-ный элемент.
+let arr3 = [1, 2, 4, 6, 3, 4, 77, 334, 1, 2];
+let maxElement = Math.max.apply(null, arr3);
+console.log(maxElement)
+
+
+// 5. Функция добавления нового элемента в массив по указанному индексу.
+const numbers = [1, 2, 4, 5]
+const index = 2;
+const newNumbers = [
+	numbers.slice(0, index),
+	3,
+	numbers.slice(index)
+];
+console.log(newNumbers)
+
+// 6. Функция удаления элемента из массива по указанному индексу.
+const arrayOfNumbers = [1, 2, 3, 4];
+
+const previousSecondElementOfTheArray = arrayOfNumbers.splice(1, 1);
+
+console.log(arrayOfNumbers);
+
+console.log(previousSecondElementOfTheArray)
+
+// Задание 2.
+// Создать еще один массив из 5 случайных чисел и написать
+// следующие функции.
+
+// 1. Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из двух массивов
+// без повторений.
+let ab = [1, 2, 3];
+let b = [101, 2, 1, 10];
+let c = ab.concat(b)
+let da = c.filter((item, positive) => c.indexOf(item) === positive)
+
+console.log(da)
+
+// 2.Функция принимает 2 массива и возвращает новый массив,
+// в котором собраны общие элементы (то есть элементы,
+// которые встречаются и в первом и во втором массивах)
+// без повторений.
+
+let ae = [1, 2, 3, 5, 6, 8];
+let be = [101, 2, 1, 10, 6, 8];
+let commonElements = ae.filter((element) => be.includes(element))
+console.log([commonElements])
+
+// 3. Функция принимает 2 массива и возвращает новый мас-
+// сив, в котором собраны все элементы из первого массива,
+// которых нет во втором массиве.
+
+let ar = [1, 2, 3, 5, 6, 8];
+let br = [101, 2, 1, 10, 6];
+let commonElements1 = ar.filter((element) => br.includes(element))
+let newArrayWithoutCommonElements = ar.filter((element) => !commonElements1.includes(element))
+console.log([newArrayWithoutCommonElements])
+
+
+
+// Module_2_Week_4
+// Задание 1
+// Реализовать класс PrintMaсhine, которой состоит из:
+// ■ размера шрифта;
+// ■ цвета шрифта;
+// ■ семейства шрифта;
+// ■ метода print(), который принимает текст и печатает его
+// соответствующим шрифтом с помощью document.write().
+// Создать объект такого класса и продемонстрировать работу
+// метода.
+
+class PrintMaсhine {
+	size;
+	color;
+	family;
+	constructor(size = "16px", color = "black", family = "Times New Roman") {
+		this.size = size;
+		this.color = color;
+		this.family = family;
 	}
-	else
-	{
-	    return f
+	print(text) {
+		document.write(`<p style="font-size:${this.size}; color:${this.color}; font-family:${this.family};">${text}</p>`);
 	}
-	}
-	console.log(theBiggestOfTheNumbersFromOneToFive(1,2,8,4,6))
 
-	// Module 2 week 2.
-	// Задание 1
-	// Создать массив из 10 случайных чисел и написать несколько
-	// функций для работы с ним.
-	let arr = [1,2,4,6,3,4,77,334,1,2]
-	// 1. Функция принимает массив и выводит его на экран.
-	const myArray = [1,2,4,6,3,4,77,334,1,2]
-	function myFunction(arr: any []) {
-	    console.log(arr);
-	  }
-	 myFunction(myArray) 
-
-	// 2. Функция принимает массив и выводит только четные элементы.
-	const myArray1 = [1,2,4,6,3,4,77,334,1,2]
-	const evens = myArray1.filter((number) => number % 2 === 0);
-
-	console.log(evens);
-
-	// 3. Функция принимает массив и возвращает сумму всех элементов массива.
-	let arr2 = [1,2,4,6,3,4,77,334,1,2];
-	let result2 = arr2.reduce((sum, current) => sum + current, 0);
-
-	console.log(result2)
-	// 4. Функция принимает массив и возвращает его максималь-ный элемент.
-	let arr3 = [1,2,4,6,3,4,77,334,1,2];
-	let maxElement = Math.max.apply(null, arr3);
-	console.log(maxElement)
-	
-
-	// 5. Функция добавления нового элемента в массив по указанному индексу.
-	const numbers = [1, 2, 4, 5]
-	const index = 2;
-	const newNumbers = [
-		numbers.slice(0, index),
-		3,
-		numbers.slice(index)
-	];
-	console.log(newNumbers)
-
-	// 6. Функция удаления элемента из массива по указанному индексу.
-	const arrayOfNumbers = [1, 2, 3, 4];
-
-	const previousSecondElementOfTheArray = arrayOfNumbers.splice(1, 1);
-	
-	console.log(arrayOfNumbers); 
-	
-	console.log(previousSecondElementOfTheArray)
-
-	// Задание 2.
-	// Создать еще один массив из 5 случайных чисел и написать
-	// следующие функции.
-
-	// 1. Функция принимает 2 массива и возвращает новый мас-
-	// сив, в котором собраны все элементы из двух массивов
-	// без повторений.
-	let ab = [1, 2, 3]; 
-	let b = [101, 2, 1, 10];
-	let c = ab.concat(b)
-	let da = c.filter((item, positive) => c.indexOf(item) === positive)
-
-	console.log(da) 
-
-	// 2.Функция принимает 2 массива и возвращает новый массив,
-	// в котором собраны общие элементы (то есть элементы,
-	// которые встречаются и в первом и во втором массивах)
-	// без повторений.
-
-	let ae = [1, 2, 3, 5, 6, 8]; 
-	let be = [101, 2, 1, 10, 6, 8];
-	let commonElements = ae.filter((element) => be.includes(element))
-	console.log([commonElements]) 
-
-	// 3. Функция принимает 2 массива и возвращает новый мас-
-	// сив, в котором собраны все элементы из первого массива,
-	// которых нет во втором массиве.
-
-	let ar = [1, 2, 3, 5, 6, 8 ]; 
-	let br = [101, 2, 1, 10, 6 ];
-	let commonElements1 = ar.filter((element) => br.includes(element))
-	let newArrayWithoutCommonElements = ar.filter((element) => !commonElements1.includes(element))
-	console.log([newArrayWithoutCommonElements]) 
-
-
-
-	// Module_2_Week_4
-	// Задание 1
-	// Реализовать класс PrintMaсhine, которой состоит из:
-	// ■ размера шрифта;
-	// ■ цвета шрифта;
-	// ■ семейства шрифта;
-	// ■ метода print(), который принимает текст и печатает его
-	// соответствующим шрифтом с помощью document.write().
-	// Создать объект такого класса и продемонстрировать работу
-	// метода.
-
-	class PrintMaсhine {
-		size;
-		color;
-		family;
-		constructor(size = "16px", color = "black", family = "Times New Roman") {
-			this.size = size;
-			this.color = color;
-			this.family = family;
-		}
-		print(text) {
-			document.write(`<p style="font-size:${this.size}; color:${this.color}; font-family:${this.family};">${text}</p>`);
-		}
-
-	}
+}
 
 let header = new PrintMaсhine("40px", "black", "calibri");
 let text = new PrintMaсhine("18px", "#333", "calibri");
@@ -629,23 +624,23 @@ function palindrome(str) {
 	let re = /[^A-Za-z0-9]/g;
 	str = str.toLowerCase().replace(re, '');
 	let len = str.length;
-	for (let i = 0; i < len/2; i++) {
-	  if (str[i] !== str[len - 1 - i]) {
-		  return false;
-	  }
+	for (let i = 0; i < len / 2; i++) {
+		if (str[i] !== str[len - 1 - i]) {
+			return false;
+		}
 	}
 	return true;
-   }
-   console.log(palindrome("A man, a plan, a canal. Panama"))
+}
+console.log(palindrome("A man, a plan, a canal. Panama"))
 
 // 7.Написать функцию, которая считает количество слов в
 // предложении.
 
 function truncate(str, maxlength) {
 	return (str.length > maxlength) ?
-	  str.slice(0, maxlength - 1) + '…' : str;
-  }
-  console.log(truncate("maximum power", 10))
+		str.slice(0, maxlength - 1) + '…' : str;
+}
+console.log(truncate("maximum power", 10))
 
 // 8.Написать функцию, которая возвращает самое длинное
 // слово из предложения.
@@ -906,6 +901,24 @@ console.log(`Finding the index number ${numFib} Fibonacci number ${calculateTheF
 console.log(`Finding the index number ${numFib1} Fibonacci number ${calculateTheFibonacciNumber(numFib1)}`)
 
 
-// 1313. Дан список сообщений с кнопками для удаления [x]. Заставьте кнопки работать.
-// В результате должно работать вот так:
+// A1. Infinityloop wit multiplication of different numbers.
+
+while (true) {
+	// let n = Number(prompt('Give me an integer: '));
+
+	if (n == 0) {
+		break;
+	}
+
+	console.log(n + ' * ' + n + ' = ' + (n * n));
+}
+
+console.log('done');
+
+// A1(2). Infinity loop Example.
+
+let i = 0;
+while (i < 10) {
+    console.log(i);
+}
 
