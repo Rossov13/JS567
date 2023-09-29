@@ -906,3 +906,6 @@ console.log(`Finding the index number ${numFib} Fibonacci number ${calculateTheF
 console.log(`Finding the index number ${numFib1} Fibonacci number ${calculateTheFibonacciNumber(numFib1)}`)
 
 
+// 1313. Дан список сообщений с кнопками для удаления [x]. Заставьте кнопки работать.
+// В результате должно работать вот так:
+

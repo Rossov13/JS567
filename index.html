@@ -114,6 +114,80 @@
   </script> -->
 <!-- ************ TESTS ************** -->
 
+
+<div id="container">
+  <div class="pane">
+    <h3>Лошадь</h3>
+    <p>Домашняя лошадь - животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Пржевальского.</p>
+    <button class="remove-button">[x]</button>
+  </div>
+  <div class="pane">
+    <h3>Осёл</h3>
+    <p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в развитии хозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.</p>
+    <button class="remove-button">[x]</button>
+  </div>
+  <div class="pane">
+    <h3>Кошка</h3>
+    <p>Кошка, или домашняя кошка (лат. Félis silvéstris cátus), — домашнее животное, одно из наиболее популярных (наряду с собакой) "животных-компаньонов". С точки зрения научной систематики, домашняя кошка — млекопитающее семейства кошачьих отряда хищных. Ранее домашнюю кошку нередко рассматривали как отдельный биологический вид.
+    </p>
+    <button class="remove-button">[x]</button>
+  </div>
+</div>
+
+<script>
+  container.onclick = function(event) {
+    if (event.target.className != 'remove-button') return;
+
+    let pane = event.target.closest('.pane');
+    pane.remove();
+  };
+</script>
+
+<form>
+  <input type="radio" name="age" value="10">
+  <input type="radio" name="age" value="20">
+</form>
+
+<script>
+let form = document.forms[0];
+
+let ageElems = form.elements.age;
+
+console.log(ageElems[0],ageElems[0].toString()); // [object HTMLInputElement]
+console.log(ageElems[1],ageElems[0].toString()); // [object HTMLInputElement]
+</script>
+
+<form id="form">
+  <fieldset name="userFields">
+    <legend>information</legend>
+    <input name="login" type="text">
+  </fieldset>
+</form>
+
+<script>
+  console.log(form.elements.login); // <input name="login">
+
+  let fieldset = form.elements.userFields;
+  console.log(fieldset); // HTMLFieldSetElement
+
+  // we can get the input by name both from the form and from the fieldset
+  console.log(fieldset.elements.login == form.elements.login); // true
+</script>
+
+<select id="select">
+  <option value="apple">Apple</option>
+  <option value="pear">Pear</option>
+  <option value="banana">Banana</option>
+</select>
+
+<script>
+  // all three lines do the same thing
+  select.options[2].selected = true;
+  select.selectedIndex = 2;
+  select.value = 'banana';
+  // please note: options start from zero, so index 2 means the 3rd option.
+</script>
+
 <script src="dist/script.js"></script>
 
 </body>
