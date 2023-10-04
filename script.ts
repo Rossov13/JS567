@@ -904,7 +904,7 @@ console.log(`Finding the index number ${numFib1} Fibonacci number ${calculateThe
 // A1. Infinityloop wit multiplication of different numbers.
 
 while (true) {
-	// let n = Number(prompt('Give me an integer: '));
+	let n = 2212;
 
 	if (n == 0) {
 		break;
@@ -917,36 +917,43 @@ console.log('done');
 
 // A1(2). Infinity loop Example.
 
-let i = 0;
-while (i < 10) {
-    console.log(i);
-}
+// let i = 0;
+// while (i < 10) {
+//     console.log(i);
+// }
 
 
+// HTML CSS JSResult Skip Results Iframe
+// EDIT ON
 
-// Task 4.
-let stars = document.getElementsByClassName("star");
-let output = document.getElementById("output");
-  
-// Funtion to update rating
-function gfg(n) {
-    remove();
-    for (let i = 0; i < n; i++) {
-        if (n == 1) cls = "one";
-        else if (n == 2) cls = "two";
-        else if (n == 3) cls = "three";
-        else if (n == 4) cls = "four";
-        else if (n == 5) cls = "five";
-        stars[i].className = "star " + cls;
-    }
-    output.innerText = "Rating is: " + n + "/5";
+
+const ratingStars = [...document.getElementsByClassName("rating__star")];
+const ratingResult = document.querySelector(".rating__result");
+
+printRatingResult(ratingResult);
+
+function executeRating(stars, result) {
+   const starClassActive = "rating__star fas fa-star";
+   const starClassUnactive = "rating__star far fa-star";
+   const starsLength = stars.length;
+   let i;
+   stars.map((star) => {
+      star.onclick = () => {
+         i = stars.indexOf(star);
+
+         if (star.className.indexOf(starClassUnactive) !== -1) {
+            printRatingResult(result, i + 1);
+            for (i; i >= 0; --i) stars[i].className = starClassActive;
+         } else {
+            printRatingResult(result, i);
+            for (i; i < starsLength; ++i) stars[i].className = starClassUnactive;
+         }
+      };
+   });
 }
-  
-// To remove the pre-applied styling
-function remove() {
-    let i = 0;
-    while (i < 5) {
-        stars[i].className = "star";
-        i++;
-    }
+
+function printRatingResult(result, num = 0) {
+   result.textContent = `${num}/5`;
 }
+
+executeRating(ratingStars, ratingResult);

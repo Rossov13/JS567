@@ -286,9 +286,9 @@ primeNumber();
 // для всех чисел от 2 до 9
 function multiplicationCalculator() {
     var number = 24;
-    for (var i_1 = 2; i_1 <= 9; i_1++) {
-        var result_1 = i_1 * number;
-        console.log(number + " * " + i_1 + " = " + result_1);
+    for (var i = 2; i <= 9; i++) {
+        var result_1 = i * number;
+        console.log(number + " * " + i + " = " + result_1);
     }
 }
 multiplicationCalculator();
@@ -548,8 +548,8 @@ function palindrome(str) {
     var re = /[^A-Za-z0-9]/g;
     str = str.toLowerCase().replace(re, '');
     var len = str.length;
-    for (var i_2 = 0; i_2 < len / 2; i_2++) {
-        if (str[i_2] !== str[len - 1 - i_2]) {
+    for (var i = 0; i < len / 2; i++) {
+        if (str[i] !== str[len - 1 - i]) {
             return false;
         }
     }
@@ -766,7 +766,7 @@ console.log("Finding the index number " + numFib + " Fibonacci number " + calcul
 console.log("Finding the index number " + numFib1 + " Fibonacci number " + calculateTheFibonacciNumber(numFib1));
 // A1. Infinityloop wit multiplication of different numbers.
 while (true) {
-    // let n = Number(prompt('Give me an integer: '));
+    var n = 2212;
     if (n == 0) {
         break;
     }
@@ -774,36 +774,38 @@ while (true) {
 }
 console.log('done');
 // A1(2). Infinity loop Example.
-var i = 0;
-while (i < 10) {
-    console.log(i);
+// let i = 0;
+// while (i < 10) {
+//     console.log(i);
+// }
+// HTML CSS JSResult Skip Results Iframe
+// EDIT ON
+var ratingStars = __spreadArrays(document.getElementsByClassName("rating__star"));
+var ratingResult = document.querySelector(".rating__result");
+printRatingResult(ratingResult);
+function executeRating(stars, result) {
+    var starClassActive = "rating__star fas fa-star";
+    var starClassUnactive = "rating__star far fa-star";
+    var starsLength = stars.length;
+    var i;
+    stars.map(function (star) {
+        star.onclick = function () {
+            i = stars.indexOf(star);
+            if (star.className.indexOf(starClassUnactive) !== -1) {
+                printRatingResult(result, i + 1);
+                for (i; i >= 0; --i)
+                    stars[i].className = starClassActive;
+            }
+            else {
+                printRatingResult(result, i);
+                for (i; i < starsLength; ++i)
+                    stars[i].className = starClassUnactive;
+            }
+        };
+    });
 }
-// Task 4.
-var stars = document.getElementsByClassName("star");
-var output = document.getElementById("output");
-// Funtion to update rating
-function gfg(n) {
-    remove();
-    for (var i_3 = 0; i_3 < n; i_3++) {
-        if (n == 1)
-            cls = "one";
-        else if (n == 2)
-            cls = "two";
-        else if (n == 3)
-            cls = "three";
-        else if (n == 4)
-            cls = "four";
-        else if (n == 5)
-            cls = "five";
-        stars[i_3].className = "star " + cls;
-    }
-    output.innerText = "Rating is: " + n + "/5";
+function printRatingResult(result, num) {
+    if (num === void 0) { num = 0; }
+    result.textContent = num + "/5";
 }
-// To remove the pre-applied styling
-function remove() {
-    var i = 0;
-    while (i < 5) {
-        stars[i].className = "star";
-        i++;
-    }
-}
+executeRating(ratingStars, ratingResult);
